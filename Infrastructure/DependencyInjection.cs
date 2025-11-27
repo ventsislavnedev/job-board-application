@@ -1,3 +1,5 @@
+using Application.Companies;
+using Infrastructure.Companies;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +17,8 @@ public static class DependencyInjection
 
         services.AddDbContext<JobBoardDbContext>(options =>
             options.UseNpgsql(connectionString));
+
+        services.AddScoped<ICompanyService, CompanyService>();
 
         return services;
     }

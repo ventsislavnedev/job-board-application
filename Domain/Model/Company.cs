@@ -14,9 +14,9 @@ public class Company
 
     [Required] [MaxLength(200)] public string Location { get; set; } = null!; // keep as string for now
 
-    [Required] public int UserId { get; set; }
+    [Required] public int OwnerUserId { get; set; }
 
-    [Required] public User User { get; set; } = null!;
+    [Required] public User OwnerUser { get; set; } = null!;
 
     public ICollection<JobPosting> JobPostings { get; set; } = new List<JobPosting>();
 
